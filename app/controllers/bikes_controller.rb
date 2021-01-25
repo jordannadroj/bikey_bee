@@ -8,6 +8,8 @@ class BikesController < ApplicationController
   end
 
   def create
+    current_user # how can i appoint the current_user by default?
+    raise
     @bike = Bike.new(bike_params)
     if @bike.save
       redirect_to bikes_path(@bike)
@@ -19,6 +21,6 @@ class BikesController < ApplicationController
   private
 
   def bike_params
-    params.require(:bike).permit(:name, :category, :size, :price, :location)
+    params.require(:bike).permit(:name, :category, :size, :price, :location, :user_id)
   end
 end

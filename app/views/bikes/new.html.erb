@@ -5,10 +5,12 @@
   <%= f.label :category %>
   <%= f.text_field :category %>
   <%= f.label :size %>
-  <%= f.select :size, ['12"', '16"', '18"', '20"', '24"'] %>
+  <%= f.select :size, %w(extra-small small medium large extra-large) %>
   <%= f.label :price %>
-  <%= f.number_field :price, in: 1.0..30.0, step: 0.5 %>
+  <%= f.number_field :price, in: 10..50, step: 1 %>
   <%= f.label :location %>
   <%= f.text_field :location %>
+  <%= f.label :user_id %>
+  <%= f.number_field :user_id %>
   <%= f.submit %>
 <% end %>
