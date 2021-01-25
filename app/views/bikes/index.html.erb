@@ -1,0 +1,23 @@
+<h1>Bikes in Berlin</h1>
+<p>Choose your next eco-friendly two-wheeler</p>
+
+<!-- <ul>
+<#% @bikes.each do |bike| %>
+<li><#%= bike.name %></li>
+<#%= image_tag bike.picture, alt: "alttext" %>
+<#% end %>
+</ul> -->
+<div class="cards-container">
+  <% @bikes.each do |bike| %>
+    <div class="card">
+      <!-- the below code allows for the bike picture to be a link to the bike show page -->
+      <%= link_to image_tag(bike.picture), bike_path(bike) %>
+      <div class="card-name-price">
+        <p><%= bike.name %></p>
+        <p><%= bike.price %>€</p>
+      </div>
+      <p>Size: <%= bike.size %></p>
+      <p>Location: <%= bike.location %></p>
+    </div>
+  <% end %>
+</div>

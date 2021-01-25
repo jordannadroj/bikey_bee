@@ -22,7 +22,7 @@ puts "Creating new bikes"
     price: rand(10..50),
     location: Faker::Address.city,
     user_id: 1,
-    picture: "../app/assets/images/bike.jpg"
+    picture: "bike.jpg"
     )
 puts "Creating #{bike.name}"
 end
