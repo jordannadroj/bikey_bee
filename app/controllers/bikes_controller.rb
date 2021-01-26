@@ -3,6 +3,9 @@ class BikesController < ApplicationController
     @bikes = Bike.all
   end
 
+  def show
+    @bike = Bike.find(params[:id])
+    
   def new
     @bike = Bike.new
   end
