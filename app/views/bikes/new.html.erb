@@ -1,16 +1,10 @@
-<%= form_for(@bike) do |f| %>
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :category %>
-  <%= f.text_field :category %>
-  <%= f.label :size %>
-  <%= f.select :size, %w(extra-small small medium large extra-large) %>
-  <%= f.label :price %>
-  <%= f.number_field :price, in: 10..50, step: 1 %>
-  <%= f.label :location %>
-  <%= f.text_field :location %>
-  <%= f.label :user_id %>
-  <%= f.number_field :user_id %>
-  <%= f.submit %>
-<% end %>
+<div class="container">
+  <%= simple_form_for @bike do |f| %>
+    <%= f.input :name %>
+    <%= f.input :category %>
+    <%= f.input :size, collection: %w(extra-small small medium large extra-large) %>
+    <%= f.input :price, in: 10..50, step: 1 %>
+    <%= f.input :location %>
+    <%= f.submit "Add bike", class: "btn btn-primary" %>
+  <% end %>
+</div>
