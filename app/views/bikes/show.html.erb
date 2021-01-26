@@ -1,16 +1,29 @@
-
-<div class="container-fluid mt-5">
-  <h2><%= @bike.name %></h2>
+<div class="container mt-5">
   <div class="row">
-    <div class="col-12 col-md-8">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1611295937464-76c241dd451f?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=MXwxfDB8MXxyYW5kb218fHx8fHx8fA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h6 class="card-text"><strong>Category</strong>: <%= @bike.category %>, <strong>size</strong>: <%= @bike.size %>.</h6>
-            <a href="#" class="btn btn-secondary">Book this bike</a>
-          </div>
+    <div class="col-8">
+      <h2><%= @bike.name %></h2>
+      <h4>Description of the bike which is absolutely awesome! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat suscipit at doloribus perspiciatis et, sapiente!</h4>
+    </div>
+    <div class="col-4">
+      <div class="card-price" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Total price: <strong><%= @bike.price %>€</strong></h5>
+          <h6 class="card-subtitle mb-2 text-muted">Special offer!</h6>
+          <a href="#" class="btn btn-dark">Book this bike</a>
+        </div>
       </div>
     </div>
-  </div>
+    <div class="row mt-5">
+      <div class="col">
+        <div class="card-show">
+        <img src="https://images.unsplash.com/photo-1611295937464-76c241dd451f?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=MXwxfDB8MXxyYW5kb218fHx8fHx8fA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-text"><strong>Category</strong>: <%= @bike.category %>, <strong>size</strong>: <%= @bike.size %>.</h5>
+            <a href="#" class="btn btn-secondary">Book this bike</a>
+          </div>
+      </div></div>
+      <div class="col"></div>
+    </div>
 </div>
+
 
