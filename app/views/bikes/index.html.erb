@@ -1,0 +1,39 @@
+<div class="home-banner" >
+  <div class="action-wrapper">
+    <h2>Hit the road</h2>
+    <div class="btn-wrapper">
+      <a href="" class="call-to-action-btn" href="#">Book a Bike</a>
+    </div>
+  </div>
+</div>
+
+<h1>Bikes in Berlin</h1>
+<p>Choose your next eco-friendly two-wheeler</p>
+
+<!-- <ul>
+<#% @bikes.each do |bike| %>
+<li><#%= bike.name %></li>
+<#%= image_tag bike.picture, alt: "alttext" %>
+<#% end %>
+</ul> -->
+<div class="cards-container">
+  <% @bikes.each do |bike| %>
+    <div class="card">
+      <!-- the below code allows for the bike picture to be a link to the bike show page -->
+      <%= link_to image_tag(bike.picture), bike_path(bike) %>
+      <div class="card-name-price">
+        <p><%= bike.name %></p>
+        <p><%= bike.price %>€</p>
+      </div>
+      <p>Size: <%= bike.size %></p>
+      <p>Location: <%= bike.location %></p>
+    </div>
+  <% end %>
+</div>
+<!-- <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(../images/bikeapp.jpg);">
+  <div class="container">
+    <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
+    <p>Change your life and learn to code at one of our campuses around the world.</p>
+    <a class="btn btn-flat" href="#">Apply now</a>
+  </div>
+</div> -->
