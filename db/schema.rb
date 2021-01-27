@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 2021_01_27_073055) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
     t.string "picture"
+    t.float "latitude"
+    t.float "longitude"
     t.text "description"
     t.index ["user_id"], name: "index_bikes_on_user_id"
   end

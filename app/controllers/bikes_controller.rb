@@ -5,6 +5,13 @@ class BikesController < ApplicationController
 
   def show
     @bike = Bike.find(params[:id])
+    @bikes = Bike.where.not(latitude: nil, longitude: nil)
+    @markers = @bikes.geocoded.map do |bike|
+      {
+        lat: bike.latitude,
+        lng: bike.longitude
+      }
+    end
   end
 
   def new
