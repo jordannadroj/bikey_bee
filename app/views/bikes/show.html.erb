@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-8">
       <h2><%= @bike.name %></h2>
-      <h4>Description of the bike which is absolutely awesome! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat suscipit at doloribus perspiciatis et, sapiente!</h4>
+      <h4>Description of the bike which is absolutely awesome! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat suscipit at doloribus perspiciatis et, sapiente! Ipsam modi illum error expedita repellat neque esse ut magni pariatur mollitia. Mollitia, deleniti, quidem.</h4>
     </div>
     <div class="col-4">
       <div class="card-price" style="width: 18rem;">
@@ -21,8 +21,14 @@
             <h5 class="card-text"><strong>Category</strong>: <%= @bike.category %>, <strong>size</strong>: <%= @bike.size %>.</h5>
             <a href="#" class="btn btn-secondary">Book this bike</a>
           </div>
-      </div></div>
-      <div class="col"></div>
+        </div>
+        <div class="col"></div>
+      </div>
+    </div>
+    <div id="map"
+      style="width: 100%; height: 600px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
 </div>
 
