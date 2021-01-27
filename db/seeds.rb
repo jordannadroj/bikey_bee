@@ -20,7 +20,7 @@ puts "Creating new bikes"
     category: categories.sample.to_s,
     size: sizes.sample.to_s,
     price: rand(10..50),
-    location: Faker::Address.full_address,
+    location: "Berlin",
     user_id: 1,
     picture: "bike.jpg"
     )
