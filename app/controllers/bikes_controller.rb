@@ -14,6 +14,19 @@ class BikesController < ApplicationController
     end
   end
 
+
+  def search
+    # raise
+    if params[:search].blank?
+      redirect_to root_path
+    else
+      @search = params[:search].downcase
+      @results = Bike.all.where('lower(location) LIKE :search', search: "%#{@search}%")
+    end
+  end
+
+
+
   def new
     @bike = Bike.new
   end
