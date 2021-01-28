@@ -12,9 +12,9 @@
   </head>
 
   <body>
+    <%= render 'shared/flashes' %>
+    <!-- creates nice alerts and removes the white space from underneath navbar -->
     <%= render 'shared/navbar' %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>

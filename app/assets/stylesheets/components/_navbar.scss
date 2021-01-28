@@ -1,16 +1,37 @@
-.navbar {
-  height: 60px;
+// this for the next ten lines was Xavis code
+// .navbar {
+//   height: 60px;
+// }
+
+// .navbar-brand  {
+//   img{
+//     width: 60px;
+
+//   }
+// }
+
+
+.navbar-lewagon {
+  justify-content: space-between;
+  background: white;
 }
 
-.navbar-brand  {
-  img{
-    width: 60px;
-
-  }
-
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
 }
 
+.fa-bicycle:before {
+  font-size: 50px;
+  margin-left: 12px;
+}
 
+ul {
+  margin-right: 12px;
+}
+
+li {
+  padding: 8px;
+}
 
 
 
