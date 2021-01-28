@@ -9,6 +9,7 @@ require 'faker'
 
 categories = %w(mountain city road track hyrbid childrens cruiser e-bike)
 sizes = %w(extra-small small medium large extra-large)
+bike_names = ["Fixie", "Mountain bike", "Dutch style city bike", "Great to toddlers", "Extreme Mountain Bike", "Vintage 10 speed bike", "Hybrid bike", "E-Bike", "City Cruiser"]
 
 puts "Destroying bikes"
 Bike.destroy_all
@@ -16,7 +17,7 @@ puts "Creating new bikes"
 
 10.times do
   bike = Bike.create!(
-    name: Faker::Hipster.words(number: 1),
+    name: bike_names.sample.to_s,
     category: categories.sample.to_s,
     size: sizes.sample.to_s,
     price: rand(10..50),
