@@ -20,6 +20,12 @@
     <div class="row">
       <div class="col-md-6">
         <div class="card-show">
+          <%= cl_image_tag @bike.picture.key, height: 300, width: 400, crop: :fill %>
+        <!--<img src="https://images.unsplash.com/photo-1611295937464-76c241dd451f?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=MXwxfDB8MXxyYW5kb218fHx8fHx8fA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600" class="card-img-top" alt="...">-->
+          <div class="card-body">
+            <h5 class="card-text"><strong>Category</strong>: <%= @bike.category %>, <strong>size</strong>: <%= @bike.size %>.</h5>
+            <a href="#" class="btn btn-secondary">Book this bike</a>
+
           <img src="https://images.unsplash.com/photo-1611295937464-76c241dd451f?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=MXwxfDB8MXxyYW5kb218fHx8fHx8fA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="card-text"><strong>Category</strong>: <%= @bike.category %>, <strong>size</strong>: <%= @bike.size %>.</p>
