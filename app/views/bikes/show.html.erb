@@ -15,7 +15,7 @@
     </div>
   </div>
   <div class="show-foto-map-container">
-    <div class="card-show" style="background-image: url(https://images.unsplash.com/photo-1611295937464-76c241dd451f?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=MXwxfDB8MXxyYW5kb218fHx8fHx8fA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600)">
+    <div class="card-show" style="background-image: url(<%= cl_image_path @bike.picture.key, height: 300, width: 400, crop: :fill %>)">
     </div>
       <div>
         <div id="map"
