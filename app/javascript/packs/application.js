@@ -25,6 +25,7 @@ require("channels")
 // External imports
 import "bootstrap";
 import { loadDynamicBannerText } from '../components/banner';
+import "../plugins/flatpickr"
 
 
 // Internal imports, e.g:
