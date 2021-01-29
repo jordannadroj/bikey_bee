@@ -3,14 +3,14 @@
     <h2><%= @bike.name %></h2>
     <br>
     <h5>About</h5>
-    <p>Description of the bike which is absolutely awesome! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat suscipit at doloribus perspiciatis et, sapiente!</p>
+    <p><%= @bike.description %></p>
     <p class="card-text"><strong>Category</strong>: <%= @bike.category %>, <strong>size</strong>: <%= @bike.size %>.</p>
   </div>
     <div class="card-price" style="width: 100%;">
       <div class="card-body text-center">
         <h5 class="card-title">Price for 1 day: <strong><%= @bike.price %>€</strong></h5>
         <h6 class="card-subtitle mb-2 text-muted">Special offer!</h6>
-        <a href="#" class="btn btn-primary">Book this bike</a>
+        <%= link_to "Book this bike", new_bike_booking_path(@bike), class: "btn btn-primary" %>
         </div>
     </div>
   </div>

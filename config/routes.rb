@@ -4,5 +4,8 @@ Rails.application.routes.draw do
   get '/search', to: 'bikes#search', as: 'search'
 
 
-  resources :bikes
+  resources :bikes do
+    resources :bookings
+  end
+
 end
