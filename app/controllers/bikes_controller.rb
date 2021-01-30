@@ -8,15 +8,14 @@ class BikesController < ApplicationController
 
   def show
     @bike = Bike.find(params[:id])
-    @bikes = Bike.where.not(latitude: nil, longitude: nil)
-    @markers = @bikes.geocoded.map do |bike|
-      {
-        lat: bike.latitude,
-        lng: bike.longitude
-      }
-    end
+      if @bike.latitude && @bike.longitude
+        @marker = {
+          lat: @bike.latitude,
+          lng: @bike.longitude,
+          infoWindow: render_to_string(partial: "map_box", locals: { bike: @bike })
+        }
+      end
   end
-
 
   def search
     # raise
@@ -30,8 +29,6 @@ class BikesController < ApplicationController
       authorize @bikes
   end
 
-
-#
   def new
     @bike = Bike.new
     authorize @bike
