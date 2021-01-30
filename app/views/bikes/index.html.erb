@@ -1,26 +1,12 @@
-<!-- <div class="home-banner" >
-  <div class="action-wrapper">
-    <h2>Hit the road</h2>
-    <div class="btn-wrapper">
-      <a href="" class="call-to-action-btn" href="#">Book a Bike</a>
-    </div>
-  </div>
-</div> -->
 <div class="title-index">
   <h1>Bikes around the world</h1>
   <p>Choose your next eco-friendly two-wheeler</p>
 </div>
 
-<!-- <ul>
-<#% @bikes.each do |bike| %>
-<li><#%= bike.name %></li>
-<#%= image_tag bike.picture, alt: "alttext" %>
-<#% end %>
-</ul> -->
 <div class="cards-container">
   <% @bikes.each do |bike| %>
     <div class="card">
-      <!-- the below code allows for the bike picture to be a link to the bike show page -->
+
       <%= link_to cl_image_tag bike.picture, brightness: 30, radius: 20, width: 300, height: 300, crop: :thumb, bike_path(bike) %>
       <div class="card-name-price">
         <p style="text-align: center; font-weight: bold;"><%= bike.name %></p>
@@ -32,10 +18,3 @@
     </div>
   <% end %>
 </div>
-<!-- <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(../images/bikeapp.jpg);">
-  <div class="container">
-    <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
-    <p>Change your life and learn to code at one of our campuses around the world.</p>
-    <a class="btn btn-flat" href="#">Apply now</a>
-  </div>
-</div> -->
