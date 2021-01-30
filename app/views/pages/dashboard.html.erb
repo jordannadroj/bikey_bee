@@ -1,0 +1,24 @@
+<div class="title-index">
+  <h2>Your Bookings</h2>
+</div>
+
+<div class="cards-container">
+  <% @bookings.each do |b| %>
+      <div class="card">
+        <div class="date">
+          <h5>Pickup: <%= b.start_date %> </h5>
+          <h5> Dropoff: <%= b.end_date %></h5>
+        </div>
+      <!-- the below code allows for the bike picture to be a link to the bike show page -->
+      <%= link_to image_tag(b.bike.picture), bike_path(b.bike) %>
+        <div class="card-name-price">
+          <p style="text-align: center; font-weight: bold;"><%= b.bike.name %></p>
+          <hr>
+          <p><%= b.bike.price %>€ / day</p>
+          <p>Size: <%= b.bike.size %></p>
+          <p>Location: <%= b.bike.location %></p>
+        </div>
+      </div>
+    <% end %>
+</div>
+

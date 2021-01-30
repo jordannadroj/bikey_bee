@@ -1,0 +1,24 @@
+<h1>My Bikes</h1>
+
+<div class="cards-container">
+  <% @bikes.each do |bike| %>
+    <div class="card">
+      <!-- the below code allows for the bike picture to be a link to the bike show page -->
+      <%= link_to image_tag(bike.picture), bike_path(bike) %>
+      <div class="card-name-price">
+        <p style="text-align: center; font-weight: bold;"><%= bike.name %></p>
+        <hr>
+        <p>Price per day: <%= bike.price %>€</p>
+        <p>Size: <%= bike.size %></p>
+        <p>Location: <%= bike.location %></p>
+        <p style="color: green">Status:
+          <% if bike.available %>
+            Available
+          <% else %>
+            In Use
+          <% end %>
+        </p>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -8,4 +8,7 @@ Rails.application.routes.draw do
     resources :bookings
   end
 
+  get '/dashboard', to: 'pages#dashboard', as: 'dashboard'
+
+  get '/user_bikes', to: 'pages#user_bikes', as: "user_bikes"
 end
