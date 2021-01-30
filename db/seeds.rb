@@ -13,19 +13,3 @@ bike_names = ["Fixie", "Mountain bike", "Dutch style city bike", "Great to toddl
 
 puts "Destroying bikes"
 Bike.destroy_all
-puts "Creating new bikes"
-
-10.times do
-  bike = Bike.create!(
-    name: bike_names.sample.to_s,
-    category: categories.sample.to_s,
-    size: sizes.sample.to_s,
-    price: rand(10..50),
-    location: "Berlin",
-    user_id: 1,
-    picture: "bike.jpg"
-    )
-puts "Creating #{bike.name}"
-end
-
-puts 'seeding complete'

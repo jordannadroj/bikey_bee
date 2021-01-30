@@ -1,41 +1,33 @@
-<div class="show-container container-fluid mt-5">
-  <div class="row">
-    <div class="col-md-8">
-      <h2><%= @bike.name %></h2>
-      <div>
-        <h5>About</h5>
-        <p>Description of the bike which is absolutely awesome! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat suscipit at doloribus perspiciatis et, sapiente!</p>
-      </div>
-    </div>
-    <div class="col-md-4 col-md-offset-4">
-      <div class="card-price" style="width: 18rem; margin-left: 3rem;">
-        <div class="card-body text-center">
-          <h5 class="card-title">Total price: <strong><%= @bike.price %>€</strong></h5>
-          <h6 class="card-subtitle mb-2 text-muted">Special offer!</h6>
-          <a href="#" class="btn btn-primary">Book this bike</a>
+<div class="show-container">
+  <div>
+    <h2><%= @bike.name %></h2>
+    <br>
+    <h5>About</h5>
+    <p><%= @bike.description %></p>
+    <p class="card-text"><strong>Category</strong>: <%= @bike.category %>, <strong>size</strong>: <%= @bike.size %>.</p>
+  </div>
+    <div class="card-price" style="width: 100%;">
+      <div class="card-body text-center">
+        <h5 class="card-title">Price for 1 day: <strong><%= @bike.price %>€</strong></h5>
+        <h6 class="card-subtitle mb-2 text-muted">Special offer!</h6>
+        <%= link_to "Book this bike", new_bike_booking_path(@bike), class: "btn btn-primary" %>
         </div>
-      </div>
     </div>
   </div>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="card-show">
-          <img src="https://images.unsplash.com/photo-1611295937464-76c241dd451f?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=MXwxfDB8MXxyYW5kb218fHx8fHx8fA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-text"><strong>Category</strong>: <%= @bike.category %>, <strong>size</strong>: <%= @bike.size %>.</p>
-            </div>
+  <div class="show-foto-map-container">
+    <div class="card-show" style="background-image: url(<%= cl_image_path @bike.picture.key, height: 300, width: 400, crop: :fill %>)">
+    </div>
+      <div>
+        <div id="map"
+          style="width: 100%; height: 400px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
       </div>
-        <div class="col-md-6 col-md-offset-6">
-          <div class="card-show">
-            <div id="map"
-              style="width: 100%; height: 400px;"
-              data-markers="<%= @markers.to_json %>"
-              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-            </div>
-          </div>
-        </div>
-      </div>
+  </div>
 </div>
+
+
+
 
 
