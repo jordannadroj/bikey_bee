@@ -1,11 +1,11 @@
-class BikePolicy < ApplicationPolicy
+class BookingPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
     end
   end
 
-  # def new?
+   # def new?
   #   true
   # end
 
@@ -18,10 +18,6 @@ class BikePolicy < ApplicationPolicy
   end
 
   def show?
-    true
-  end
-
-  def search?
     true
   end
 
