@@ -6,8 +6,9 @@
 <div class="cards-container">
   <% @bikes.each do |bike| %>
     <div class="card">
-
-      <%= link_to cl_image_tag bike.picture, brightness: 30, radius: 20, width: 300, height: 300, crop: :thumb, bike_path(bike) %>
+      <a href="<%= bike_path(bike) %>">
+        <%= cl_image_tag bike.picture, brightness: 30, radius: 20, width: 300, height: 300, crop: :thumb %>
+      </a>
       <div class="card-name-price">
         <p style="text-align: center; font-weight: bold;"><%= bike.name %></p>
         <hr>
