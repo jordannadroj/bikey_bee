@@ -44,7 +44,7 @@ count = 0
     )
   bike.picture.attach(io: file, filename: "file.png", content_type: "image/png")
   bike.save
-  count =+ 1
+  count += 1
   puts "Creating #{bike.name}"
 end
 
