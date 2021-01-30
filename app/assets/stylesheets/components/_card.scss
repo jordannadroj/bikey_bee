@@ -45,7 +45,7 @@
 
 .card {
   // width: 300px;
-  height: 320px;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -57,6 +57,14 @@
   &:hover {
     transform: scale(1.1)
   }
+}
+
+.card-name-price {
+  padding: 20px;
+}
+
+.date {
+  padding: 20px;
 }
 
 // Smallest device

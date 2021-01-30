@@ -6,9 +6,10 @@
     </div>
   </div>
 </div> -->
-
-<h1>Bikes in <%= @search.capitalize %></h1>
-<p>Choose your next eco-friendly two-wheeler</p>
+<div class="title-index">
+  <h1>Bikes in <%= @search.capitalize %></h1>
+  <p>Choose your next eco-friendly two-wheeler</p>
+</div>
 
 <!-- <ul>
 <#% @bikes.each do |bike| %>
@@ -22,11 +23,12 @@
       <!-- the below code allows for the bike picture to be a link to the bike show page -->
       <%= link_to image_tag(bike.picture), bike_path(bike) %>
       <div class="card-name-price">
-        <p><%= bike.name %></p>
-        <p><%= bike.price %>€</p>
+        <p style="text-align: center; font-weight: bold;"><%= bike.name %></p>
+        <hr>
+        <p>Price per day: <%= bike.price %>€</p>
+        <p>Size: <%= bike.size %></p>
+        <p>Location: <%= bike.location %></p>
       </div>
-      <p>Size: <%= bike.size %></p>
-      <p>Location: <%= bike.location %></p>
     </div>
   <% end %>
 </div>
