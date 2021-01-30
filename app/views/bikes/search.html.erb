@@ -17,7 +17,7 @@
 <#% end %>
 </ul> -->
 <div class="cards-container">
-  <% @results.each do |bike| %>
+  <% @bikes.each do |bike| %>
     <div class="card">
       <!-- the below code allows for the bike picture to be a link to the bike show page -->
       <%= link_to image_tag(bike.picture), bike_path(bike) %>
