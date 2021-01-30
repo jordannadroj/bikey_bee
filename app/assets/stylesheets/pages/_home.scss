@@ -1,1 +1,20 @@
 // Specific CSS for your home-page
+.btn-outline-primary {
+    position: absolute;
+    right: 8px;
+    top: 18px;
+    z-index: 1;
+}
+
+.input-grouo-btn {
+  position: absolute;
+  z-index: 1;
+}
+
+#search {
+  // border-top-right-radius:  8px;
+  // border-bottom-right-radius:  8px;
+  border-radius: 24px;
+  padding: 25px 20px;
+  margin-top: 12px;
+}

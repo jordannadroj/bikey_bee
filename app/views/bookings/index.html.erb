@@ -1,0 +1,10 @@
+<h2>Bookings</h2>
+
+<% @bookings.each do |b| %>
+  <p>
+    <%= b.user_id %>
+    <%= b.bike_id %>
+    <%= b.start_date %>
+    <%= b.end_date %>
+  </p>
+<% end %>
