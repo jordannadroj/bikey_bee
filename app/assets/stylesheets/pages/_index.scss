@@ -15,3 +15,15 @@
   padding: 25px 20px;
   margin-top: 12px;
 }
+
+// Specific CSS for your home-page
+.btn-outline-primary {
+    position: absolute;
+    right: 8px;
+    top: 18px;
+    z-index: 1;
+}
+
+.btn {
+  z-index: 100;
+}
