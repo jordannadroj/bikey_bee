@@ -27,7 +27,6 @@ import "bootstrap";
 import { loadDynamicBannerText } from '../components/banner';
 import "../plugins/flatpickr"
 import { initMapbox } from '../plugins/init_mapbox';
-import { initAutocomplete } from '../plugins/initAutocomplete';
 
 
 // Internal imports, e.g:
