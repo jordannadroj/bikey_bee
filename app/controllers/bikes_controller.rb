@@ -19,21 +19,21 @@ class BikesController < ApplicationController
 
   def search
     # raise
+    @bikes = Bike.all
     if params[:search].blank?
-      redirect_to root_path
+      redirect_to bikes_path
     else
       @search = params[:search].downcase
       # @bikes = Bike.all.where('lower(location) LIKE :search', search: "%#{@search}%")
       @bikes = Bike.near(@search, 25)
     end
-      authorize @bikes
+    authorize @bikes
   end
 
   def new
     @bike = Bike.new
     authorize @bike
   end
-
 
   def create
     @bike = Bike.new(bike_params)
