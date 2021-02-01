@@ -3,6 +3,11 @@ class BikesController < ApplicationController
   def index
     # @bikes = Bike.all
     @bikes = policy_scope(Bike)
+    if params[:query].present?
+      @bikes = Bike.search_by_location_and_category(params[:query])
+    else
+      @bikes = Bike.all
+    end
     # authorize @bikes
   end
 
