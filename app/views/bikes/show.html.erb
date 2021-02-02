@@ -1,31 +1,39 @@
 <div class="show-container">
-  <div>
-    <h2><%= @bike.name %></h2>
-    <br>
-    <h5>About</h5>
-    <p><%= @bike.description %></p>
-    <p class="card-text"><strong>Category</strong>: <%= @bike.category %>, <strong>size</strong>: <%= @bike.size %>.</p>
-  </div>
-    <div class="card-price" style="width: 100%;">
-      <div class="card-body text-center">
-        <h5 class="card-title">Price for 1 day: <strong><%= @bike.price %>€</strong></h5>
-        <h6 class="card-subtitle mb-2 text-muted">Special offer!</h6>
-        <%= link_to "Book this bike", new_bike_booking_path(@bike), class: "btn btn-primary" %>
+  <div class="row justify-content-center">
+    <div class="photo-and-map col-xl-8">
+      <h2><%= @bike.name %></h2>
+      <br>
+      <div class="show-foto-map-container">
+        <div class="card-show" style="background-image: url(<%= cl_image_path @bike.picture.key, height: 300, width: 400, crop: :fill %>)">
         </div>
-    </div>
-  </div>
-  <div class="show-foto-map-container">
-    <div class="card-show" style="background-image: url(<%= cl_image_path @bike.picture.key, height: 300, width: 400, crop: :fill %>)">
-    </div>
-      <div>
-        <div id="map"
-          style="width: 100%; height: 400px;"
-          data-marker="<%= @marker.to_json %>"
-          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-        </div>
+          <div>
+            <div id="map"
+              style="width: 100%; height: 400px;"
+              data-marker="<%= @marker.to_json %>"
+              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+            </div>
+          </div>
       </div>
+    </div>
+  </div>
+  <div class="info-booking row justify-content-around">
+    <div class="col-6">
+      <div>
+        <h5>About</h5>
+        <p><%= @bike.description %></p>
+        <p class="card-text"><strong>Category</strong>: <%= @bike.category %>, <strong>size</strong>: <%= @bike.size %>.</p>
+      </div>
+    </div>
+    <div class="col-6">
+        <div class="card-price">
+          <h5 class="card-title"><strong>€<%= @bike.price %></strong> / day</h5>
+          <%= render "bookings/booking_form" %>
+        </div>
+    </div>
   </div>
 </div>
+
+<!-- for booking on show page -->
 
 
 

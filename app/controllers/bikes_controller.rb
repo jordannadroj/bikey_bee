@@ -20,6 +20,9 @@ class BikesController < ApplicationController
           infoWindow: render_to_string(partial: "map_box", locals: { bike: @bike })
         }
       end
+    # for adding booking directly on to show page
+    @booking = Booking.new
+    authorize @booking
   end
 
   def search
