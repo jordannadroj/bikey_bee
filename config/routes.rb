@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :bikes do
     resources :bookings
+    resources :reviews, only: [ :new, :create ]
   end
 
   get '/dashboard', to: 'pages#dashboard', as: 'dashboard'
