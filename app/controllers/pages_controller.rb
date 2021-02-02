@@ -9,7 +9,7 @@ class PagesController < ApplicationController
   def dashboard
     # collect all booking wheere user id = current user id
     # create route for this dash
-    @bookings = Booking.where(user_id: current_user)
+    @bookings = Booking.where(user_id: current_user).order(:start_date)
   end
 
   def user_bikes

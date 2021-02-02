@@ -5,8 +5,8 @@
     <div class="single-info">
       <h2><%= @booking.bike.name %></h2>
 
-      <p>Pickup: <%= @booking.start_date %></p>
-      <p>Dropoff: <%= @booking.end_date %></p>
+      <p>Pickup: <%= @booking.start_date.strftime("%-d %b %Y") %></p>
+      <p>Dropoff: <%= @booking.end_date.strftime("%-d %b %Y") %></p>
       <p><%= @booking.bike.price %>€ / day</p>
       <p>Size: <%= @booking.bike.size %></p>
       <p>Location: <%= @booking.bike.location %></p>
