@@ -20,10 +20,11 @@
       <div class="card-name-price">
         <p style="text-align: center; font-weight: bold;"><%= bike.name %></p>
         <hr>
-        <p>Price per day: <%= bike.price %>€</p>
+        <p>Price: <strong><%= bike.price %></strong> <i class="fas fa-euro-sign"></i> / day</p>
         <p>Size: <%= bike.size %></p>
-        <p>Location: <%= bike.location %></p>
+        <p><i class="fas fa-map-marker-alt"></i> <%= bike.location %></p>
       </div>
     </div>
   <% end %>
 </div>
+
