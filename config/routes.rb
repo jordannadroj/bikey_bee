@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     resources :reviews, only: [ :new, :create ]
   end
 
+  resources :reviews, only: [ :update, :destroy ]
+
   get '/dashboard', to: 'pages#dashboard', as: 'dashboard'
 
   get '/user_bikes', to: 'pages#user_bikes', as: "user_bikes"

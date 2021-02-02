@@ -18,6 +18,13 @@ class ReviewsController < ApplicationController
     end
   end
 
+  # def destroy
+  #   @review = Review.find(params[:id])
+  #   authorize @review
+  #   @review.destroy
+  #   redirect_to bike_path(@review.bike)
+  # end
+
   private
 
   def review_params

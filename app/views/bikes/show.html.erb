@@ -27,7 +27,9 @@
   <div class="review-container">
     <ul class="list-group">
       <% @bike.reviews.each do |review| %>
-        <li class="list-group-item"><%= review.content %></li>
+        <li class="list-group-item">
+          <%= review.content %>
+        </li>
       <% end %>
     </ul>
     <% if current_user.bookings.where(bike: @bike).any? %>
