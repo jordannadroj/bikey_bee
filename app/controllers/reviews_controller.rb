@@ -1,9 +1,9 @@
 class ReviewsController < ApplicationController
-  before_action :set_review, only: [:show, :edit, :update, :destroy]
   before_action :set_bike
+  before_action :set_review, only: [:edit, :update, :destroy]
+  # before_action :authenticate_user!, only: [:new, :edit]
 
   def new
-    @bike = Bike.find(params[:bike_id])
     @review = Review.new
     authorize @review
   end
@@ -26,27 +26,33 @@ class ReviewsController < ApplicationController
   end
 
   def update
-    @review.update(review_params)
+    if @review.update(review_params)
+      # authorize @review
+      redirect_to bike_path(@bike)
+    else
+      # authorize @review
+      render "edit"
+    end
   end
 
   def destroy
     @review = Review.find(params[:id])
-    authorize @review
     @review.destroy
+    authorize @review
     redirect_to bike_path(@bike)
   end
 
   private
 
-  def set_review
-    @review = Review.find(params[:id])
+  def review_params
+    params.require(:review).permit(:content, :rating)
   end
 
   def set_bike
     @bike = Bike.find(params[:bike_id])
   end
 
-  def review_params
-    params.require(:review).permit(:content)
+  def set_review
+    @review = Review.find(params[:id])
   end
 end

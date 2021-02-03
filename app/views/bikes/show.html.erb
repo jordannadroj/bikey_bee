@@ -31,17 +31,17 @@
         </div>
     </div>
     <div class="review-container">
-    <ul class="list-group">
+   <!--  <ul class="list-group">
       <% @bike.reviews.each do |review| %>
         <li class="list-group-item">
           <%= review.content %>
         </li>
       <% end %>
-    </ul>
+    </ul> -->
+      <%= render @bike.reviews %>
     <% if current_user.bookings.where(bike: @bike).any? %>
-      <%= link_to 'Leave a review', new_bike_review_path(@bike), class: "btn btn-primary" %>
+      <%= link_to 'Add Review', new_bike_review_path(@bike), class: "btn btn-primary" %>
     <% end %>
-    <%= link_to 'Edit', edit_bike_review_path(@bike, @review) %>
   </div>
 </div>
 
