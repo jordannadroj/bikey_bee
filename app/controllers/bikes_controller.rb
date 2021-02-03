@@ -23,6 +23,7 @@ class BikesController < ApplicationController
     # for adding booking directly on to show page
     @booking = Booking.new
     authorize @booking
+    @review = Review.where(bike_id: @bike.id).order("create_at DESC")
   end
 
   def search
