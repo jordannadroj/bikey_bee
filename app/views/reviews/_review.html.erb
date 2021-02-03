@@ -1,6 +1,5 @@
 <div class="review">
-
-  <div class="review-rating" data-score="<%= review.rating %>"></div>
+  <div class="review-rating"><%= review.rating %></div>
   <p class="review-content"><%= review.content %></p>
 
 
@@ -14,9 +13,6 @@
         <%= link_to "Delete", bike_review_path(review.bike, review), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-custom" %>
 
       </div>
-
     <% end %>
-
   <% end %>
-
 </div>

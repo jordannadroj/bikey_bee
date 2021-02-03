@@ -1,7 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_bike
   before_action :set_review, only: [:edit, :update, :destroy]
-  # before_action :authenticate_user!, only: [:new, :edit]
 
   def new
     @review = Review.new
@@ -23,9 +22,11 @@ class ReviewsController < ApplicationController
   end
 
   def edit
+    authorize @review
   end
 
   def update
+    authorize @review
     if @review.update(review_params)
       # authorize @review
       redirect_to bike_path(@bike)
