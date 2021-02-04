@@ -12,8 +12,8 @@ class Bike < ApplicationRecord
   has_one_attached :picture
 
   include PgSearch::Model
-   pg_search_scope :search_by_location_and_category,
-     against: [:location, :category],
+   pg_search_scope :search_by_location_category_and_size,
+     against: [:location, :category, :size],
      using: {
        tsearch: { prefix: true } # <-- now `superman batm` will return something!
      }

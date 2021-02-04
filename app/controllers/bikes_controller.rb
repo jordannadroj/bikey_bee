@@ -4,7 +4,7 @@ class BikesController < ApplicationController
     # @bikes = Bike.all
     @bikes = policy_scope(Bike)
     if params[:query].present?
-      @bikes = Bike.search_by_location_and_category(params[:query])
+      @bikes = Bike.search_by_location_category_and_size(params[:query])
     else
       @bikes = Bike.all
     end
@@ -23,6 +23,7 @@ class BikesController < ApplicationController
     # for adding booking directly on to show page
     @booking = Booking.new
     authorize @booking
+    @review = Review.where(bike_id: @bike.id).order("create_at DESC")
   end
 
   def search

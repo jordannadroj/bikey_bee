@@ -13,5 +13,10 @@
 }
 
 .index-search {
-  width: 50%;
+  display: flex;
+  }
+
+.btn-index-search {
+  position: relative;
+  left: -48px;
 }
