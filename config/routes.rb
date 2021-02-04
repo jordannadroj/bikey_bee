@@ -6,10 +6,8 @@ Rails.application.routes.draw do
 
   resources :bikes do
     resources :bookings
-    resources :reviews, only: [ :new, :create ]
+    resources :reviews, except: [ :show, :index ]
   end
-
-  resources :reviews, only: [ :update, :destroy ]
 
   get '/dashboard', to: 'pages#dashboard', as: 'dashboard'
 
