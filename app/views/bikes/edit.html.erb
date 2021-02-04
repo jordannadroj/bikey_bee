@@ -1,0 +1,12 @@
+<div class="container">
+  <%= simple_form_for @bike do |f| %>
+    <%= f.input :name %>
+    <%= f.input :category %>
+    <%= f.input :size, collection: %w(extra-small small medium large extra-large) %>
+    <%= f.input :price, input_html: { min: "0", step: "1" } %>
+    <%= f.input :location %>
+    <%= f.input :description %>
+    <%= f.input :picture, as: :file %>
+    <%= f.submit "Add bike", class: "btn btn-primary" %>
+  <% end %>
+</div>
