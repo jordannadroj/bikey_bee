@@ -12,10 +12,13 @@
   background-size: cover;
   background-position: center;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  // align-items: center;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding-bottom: 12px;
+  h5 {
+    padding-left: 36px;
+    padding-top: 25px;
+  }
 }
 
 .show-container {
@@ -24,7 +27,7 @@
   padding: 20px;
   display: grid;
   grid-gap: 24px;
-  grid-template-columns: 4fr 1fr;
+  grid-template-columns: 4fr;
 }
 
 .show-foto-map-container {
