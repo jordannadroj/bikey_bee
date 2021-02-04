@@ -24,6 +24,16 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
+  def update
+    @booking = Booking.find(params[:id])
+    if @booking.update(booking_params)
+      redirect_to @booking, notice: 'Booking was succesfully updated.'
+    else
+      render :edit
+    end
+    authorize @booking
+  end
+
   def create
     # initialize new booking
     @booking = Booking.new(booking_params)
@@ -47,7 +57,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to bookings_path
+    redirect_to dashboard_path, notice: 'Booking was succesfully cancelled.'
   end
 
   private
