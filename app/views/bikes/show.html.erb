@@ -22,6 +22,9 @@
         <h5>About</h5>
         <p><%= @bike.description %></p>
         <p class="card-text"><strong>Category</strong>: <%= @bike.category %>, <strong>size</strong>: <%= @bike.size %>.</p>
+        <div class="review-link justify-content-center">
+          <%= link_to 'Add review', new_bike_review_path(@bike), class: "btn btn-light" %>
+        </div>
       </div>
     </div>
     <div class="col-6">
@@ -30,17 +33,15 @@
           <%= render "bookings/booking_form" %>
         </div>
     </div>
-    <div class="review-container">
-      <%= render @bike.reviews %>
-    <% if current_user.bookings.where(bike: @bike).any? %>
-      <%= link_to 'Add Review', new_bike_review_path(@bike), class: "btn btn-primary" %>
-    <% end %>
+    <div class="justify-content-center">
+      <div class="review-container">
+        <%= render @bike.reviews %>
+        <% if current_user.bookings.where(bike: @bike).any? %>
+        <% end %>
+      </div>
+    </div>
   </div>
-</div>
 
 <!-- for booking on show page -->
-
-
-
 
 
