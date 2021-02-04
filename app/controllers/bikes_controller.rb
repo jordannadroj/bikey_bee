@@ -59,7 +59,7 @@ class BikesController < ApplicationController
   def destroy
     # @bike = Bike.find(params[:id])
     @bike.destroy
-    redirect_to bikes_path
+    redirect_to user_bikes_path
   end
 
   private
