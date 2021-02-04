@@ -18,6 +18,8 @@
           <p>Size: <%= b.bike.size %></p>
           <p>Location: <%= b.bike.location %></p>
         </div>
+        <%= link_to ('<i class="fas fa-edit"></i> Edit').html_safe, edit_booking_path(b), class: "btn btn-dark m-3" %>
+        <%= link_to ('<i class="fas fa-trash"></i> Delete').html_safe, booking_path(b), method: :delete, class: "btn btn-dark m-3" %>
       </div>
     <% end %>
 </div>
