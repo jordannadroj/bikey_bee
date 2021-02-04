@@ -1,9 +1,11 @@
 <div class="container">
   <div class="form-wrapper" style="width: 90%; margin: 0 auto;">
-    <%= simple_form_for [@bike, @booking] do |f| %>
-      <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= f.button :submit, "Book!", class: "btn btn-primary" %>
-    <% end %>
+    <div id='bike-booking-dates' data-unavailable="<%= @bike.unavailable_dates.to_json %>">
+      <%= simple_form_for([@bike, @booking]) do |f| %>
+        <%= f.input :start_date, as: :string, type: :text %>
+        <%= f.input :end_date, as: :string, type: :text %>
+        <%= f.submit "Book!", class: "btn btn-primary" %>
+      <% end %>
+    </div>
   </div>
 </div>

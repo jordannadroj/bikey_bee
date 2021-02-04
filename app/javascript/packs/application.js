@@ -27,6 +27,9 @@ import "bootstrap";
 import { loadDynamicBannerText } from '../components/banner';
 import "../plugins/flatpickr"
 import { initMapbox } from '../plugins/init_mapbox';
+import { toggleDateInputs } from '../components/booking';
+import flatpickr from "flatpickr";
+
 
 
 // Internal imports, e.g:
@@ -46,3 +49,5 @@ document.addEventListener('turbolinks:load', () => {
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
 })
+
+toggleDateInputs();
