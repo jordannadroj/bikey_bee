@@ -13,5 +13,29 @@
 }
 
 .index-search {
-  width: 50%;
+  display: flex;
+  }
+
+.btn-index-search {
+  position: relative;
+  left: -48px;
+}
+
+#home-search {
+  position: relative;
+  left: -120px;
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 0 14px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+#home-search-bar {
+  padding: 22px;
 }

@@ -1,5 +1,12 @@
 <div class="title-index">
-  <h1>Bikes around the world</h1>
+
+  <% if !@bikes.first %>
+    <h1>Sorry, there are no bikes in <%= params[:query].capitalize %> yet...</h1>
+  <% elsif params[:query].present? %>
+    <h1>Bikes in <%= params[:query].split.first.capitalize %></h1>
+  <% else %>
+    <h1>Bikes around the world</h1>
+  <% end %>
   <p>Choose your next eco-friendly two-wheeler</p>
 </div>
 
@@ -21,6 +28,7 @@
         <p style="text-align: center; font-weight: bold;"><%= bike.name %></p>
         <hr>
         <p>Price: <strong><%= bike.price %></strong> <i class="fas fa-euro-sign"></i> / day</p>
+        <p>Category: <%= bike.category %></p>
         <p>Size: <%= bike.size %></p>
         <p><i class="fas fa-map-marker-alt"></i> <%= bike.location %></p>
       </div>

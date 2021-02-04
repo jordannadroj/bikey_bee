@@ -2,9 +2,10 @@ class BikesController < ApplicationController
   before_action :set_bike, only: [:show, :edit, :update, :destroy]
   def index
     # @bikes = Bike.all
+    # raise
     @bikes = policy_scope(Bike)
     if params[:query].present?
-      @bikes = Bike.search_by_location_and_category(params[:query])
+      @bikes = Bike.search_by_location_category_and_size(params[:query])
     else
       @bikes = Bike.all
     end
@@ -23,23 +24,11 @@ class BikesController < ApplicationController
     # for adding booking directly on to show page
     @booking = Booking.new
     authorize @booking
+    @review = Review.where(bike_id: @bike.id).order("create_at DESC")
   end
 
   def edit
     @bike = Bike.find(params[:id])
-  end
-
-  def search
-    # raise
-    @bikes = Bike.all
-    if params[:search].blank?
-      redirect_to bikes_path
-    else
-      @search = params[:search].downcase
-      # @bikes = Bike.all.where('lower(location) LIKE :search', search: "%#{@search}%")
-      @bikes = Bike.near(@search, 25)
-    end
-    authorize @bikes
   end
 
   def new
