@@ -22,6 +22,10 @@ class BikesController < ApplicationController
       end
   end
 
+  def edit
+    @bike = Bike.find(params[:id])
+  end
+
   def search
     # raise
     @bikes = Bike.all
@@ -58,6 +62,12 @@ class BikesController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    # @bike = Bike.find(params[:id])
+    @bike.destroy
+    redirect_to bikes_path
   end
 
   private

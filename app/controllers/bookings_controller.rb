@@ -20,6 +20,10 @@ class BookingsController < ApplicationController
     authorize @booking
   end
 
+  def edit
+    @booking = Booking.find(params[:id])
+  end
+
   def create
     # initialize new booking
     @booking = Booking.new(booking_params)
@@ -36,6 +40,12 @@ class BookingsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to bookings_path
   end
 
   private
