@@ -1,5 +1,12 @@
 <div class="title-index">
-  <h1>Bikes around the world</h1>
+
+  <% if !@bikes.first %>
+    <h1>Sorry, there are no bikes in <%= params[:query].capitalize %> yet...</h1>
+  <% elsif params[:query].present? %>
+    <h1>Bikes in <%= params[:query].split.first.capitalize %></h1>
+  <% else %>
+    <h1>Bikes around the world</h1>
+  <% end %>
   <p>Choose your next eco-friendly two-wheeler</p>
 </div>
 
