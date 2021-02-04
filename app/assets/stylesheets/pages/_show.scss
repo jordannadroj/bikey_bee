@@ -10,3 +10,31 @@
 #new_booking {
   width: 90%;
 }
+
+.review {
+  display: grid;
+  grid-gap: 48px;
+  margin: 20px;
+  padding: 48px;
+  grid-template-columns: 11fr 1fr;
+  background-color: white;
+}
+
+.review-rating {
+  display: flex;
+  margin: 0;
+}
+
+.review-rating p {
+  margin-right: 4px;
+}
+
+.review-container {
+  background-color: #F4F4F4;
+  padding: 4px;
+}
+
+.review-link {
+ padding-top: 16px;
+ margin-top: 16px;
+}
