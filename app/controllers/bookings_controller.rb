@@ -9,7 +9,7 @@ class BookingsController < ApplicationController
   end
 
   def show
-    @bike = Bike.find(params[:bike_id])
+    # @bike = Bike.find(params[:bike_id])
     @booking = Booking.find(params[:id])
   end
 
@@ -30,13 +30,15 @@ class BookingsController < ApplicationController
     # find user which is booking bike
     # @bike = Bike.find(params[:bike_id])
     @booking.user = current_user
-    authorize @booking
+
     # set the bookings user id to current user
     @booking.bike = @bike
+    authorize @booking
+
     # @booking.user = @user
     # save booking
-    if @booking.save
-      redirect_to bike_booking_path(@bike, @booking)
+    if @booking.save!
+      redirect_to booking_path(@booking)
     else
       render :new
     end
