@@ -27,17 +27,9 @@ class BikesController < ApplicationController
     @review = Review.where(bike_id: @bike.id).order("create_at DESC")
   end
 
-  # def search
-  #   @bikes = Bike.all
-  #   if params[:search].blank?
-  #     redirect_to bikes_path
-  #   else
-  #     @search = params[:search].downcase
-  #     # @bikes = Bike.all.where('lower(location) LIKE :search', search: "%#{@search}%")
-  #     @bikes = Bike.near(@search, 25)
-  #   end
-  #   authorize @bikes
-  # end
+  def edit
+    @bike = Bike.find(params[:id])
+  end
 
   def new
     @bike = Bike.new
@@ -62,6 +54,12 @@ class BikesController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    # @bike = Bike.find(params[:id])
+    @bike.destroy
+    redirect_to bikes_path
   end
 
   private
