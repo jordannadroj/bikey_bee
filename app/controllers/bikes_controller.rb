@@ -26,7 +26,7 @@ class BikesController < ApplicationController
   end
 
   def edit
-    @bike = Bike.find(params[:id])
+    # @bike = Bike.find(params[:id])
   end
 
   def search

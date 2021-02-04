@@ -14,6 +14,8 @@
     <div class="bike-picture">
       <%= link_to image_tag(@booking.bike.picture), bike_path(@booking.bike) %>
     </div>
+    <%= link_to ('<i class="fas fa-plus"></i> Edit').html_safe, edit_bike_path(@bike), class: "btn btn-dark m-3" %>
+    <%= link_to ('<i class="fas fa-trash"></i> Delete').html_safe, bike_path(@bike), class: "btn btn-dark m-3" %>
   </div>
   <br>
   <br>
