@@ -28,7 +28,7 @@ const toggleDateInputs = function() {
         disable: unvailableDates,
         },
       });
-  }
+  };
 };
 
 export { toggleDateInputs }
