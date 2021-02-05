@@ -21,7 +21,7 @@
       </div>
       <div>
         <%= link_to ('<i class="fas fa-edit"></i> Edit').html_safe, edit_bike_path(bike), class: "btn-edit-delete" %>
-        <%= link_to ('<i class="fas fa-trash"></i> Delete').html_safe, bike_path(bike), method: :delete, class: "btn-edit-delete" %>
+        <%= link_to ('<i class="fas fa-trash"></i> Delete').html_safe, bike_path(bike), method: :delete, data: { confirm: "Are you sure?" }, class: "btn-edit-delete" %>
       </div>
     </div>
   <% end %>
