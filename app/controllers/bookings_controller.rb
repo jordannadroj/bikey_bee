@@ -30,10 +30,10 @@ class BookingsController < ApplicationController
     @booking.bike = @bike
     # @booking.user = @user
     # save booking
-    if @booking.save
+    if @booking.save!
       redirect_to booking_path(@booking)
     else
-      render :new
+      render "bikes/show"
     end
   end
 
