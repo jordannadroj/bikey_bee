@@ -1,11 +1,10 @@
 <div class="review">
-  <p>"<%= review.content %>"</p>
-
   <div class="review-rating">
     <% review.rating.times do %>
     <p><i class="fas fa-star"></i></p>
     <% end %>
   </div>
+  <p><%= review.content %></p>
   <% if user_signed_in? %>
 
     <% if review.user_id == current_user.id %>
@@ -19,4 +18,5 @@
     <% end %>
     <% end %>
   </div>
+  <hr>
 </div>
