@@ -33,7 +33,7 @@
   </div>
     <div class="reviews">
       <br>
-      <p><%= @bike.reviews.length %> reviews</p>
+      <%= pluralize @bike.reviews.length, "review" %>
       <hr>
         <div class="review-container">
           <%= render @bike.reviews %>
