@@ -1,5 +1,10 @@
-<h2>Edit Review</h2>
-
-<%= render "form" %>
-
-<%= link_to "Back", bike_path(@review.bike) %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-8">
+      <h2>Edit Review</h2>
+      <%= render "form" %>
+      <br>
+      <%= link_to "Back", bike_path(@review.bike), class: "btn btn-light" %>
+    </div>
+  </div>
+</div>
