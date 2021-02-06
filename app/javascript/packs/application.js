@@ -28,7 +28,8 @@ import { loadDynamicBannerText } from '../components/banner';
 import "../plugins/flatpickr"
 import { initMapbox } from '../plugins/init_mapbox';
 import { toggleDateInputs } from '../components/booking';
-// import flatpickr from "flatpickr";
+import flatpickr from "flatpickr";
+import { loadBooking } from '../plugins/init_flatpickr'
 
 
 
@@ -40,15 +41,19 @@ import { toggleDateInputs } from '../components/booking';
 //   // initSelect2();
 // });
 
+window.addEventListener("turbolinks:load", function() {
+  loadBooking();
+});
+
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   // [...]
   initMapbox();
   loadDynamicBannerText();
-  toggleDateInputs();
   // flatpickr();
 });
 
+toggleDateInputs();
 // document.addEventListener('turbolinks:load', () => {
 
 // })

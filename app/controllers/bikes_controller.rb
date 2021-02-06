@@ -23,8 +23,9 @@ class BikesController < ApplicationController
       end
     # for adding booking directly on to show page
     @booking = Booking.new
+    @review = Review.new
     authorize @booking
-    @review = Review.where(bike_id: @bike.id).order("create_at DESC")
+    @reviews = Review.where(bike_id: @bike.id).order("create_at DESC")
   end
 
   def edit
