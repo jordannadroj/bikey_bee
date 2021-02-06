@@ -11,6 +11,12 @@ class Bike < ApplicationRecord
 
   has_one_attached :picture
 
+  def unavailable_dates
+    bookings.pluck(:start_date, :end_date).map do |range|
+      { from: range[0], to: range[1] }
+    end
+  end
+
   include PgSearch::Model
    pg_search_scope :search_by_location_category_and_size,
      against: [:location, :category, :size],

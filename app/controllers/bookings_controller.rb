@@ -9,7 +9,6 @@ class BookingsController < ApplicationController
   end
 
   def show
-    # @bike = Bike.find(params[:bike_id])
     @booking = Booking.find(params[:id])
   end
 

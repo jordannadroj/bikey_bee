@@ -6,16 +6,16 @@
     <p><i class="fas fa-star"></i></p>
     <% end %>
   </div>
+  <% if user_signed_in? %>
 
-  <div>
-    <p class="review-content"><%= review.content %></p>
-    <% if user_signed_in? %>
-      <% if review.user_id == current_user.id %>
-        <div>
-          <%= link_to "Edit", edit_bike_review_path(review.bike, review), class: "btn btn-custom" %>
-          <%= link_to "Delete", bike_review_path(review.bike, review), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-custom" %>
-        </div>
-      <% end %>
+    <% if review.user_id == current_user.id %>
+
+      <div class="links btn-group">
+
+        <%= link_to "Edit", edit_review_path(review.bike, review), class: "btn btn-custom" %>
+        <%= link_to "Delete", review_path(review.bike, review), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-custom" %>
+
+      </div>
     <% end %>
   </div>
 </div>
