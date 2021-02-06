@@ -15,5 +15,4 @@ class PagesController < ApplicationController
   def user_bikes
     @bikes = Bike.where(user_id: current_user)
   end
-
 end

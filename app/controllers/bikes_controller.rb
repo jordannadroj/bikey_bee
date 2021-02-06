@@ -2,6 +2,7 @@ class BikesController < ApplicationController
   before_action :set_bike, only: [:show, :edit, :update, :destroy]
   def index
     # @bikes = Bike.all
+    # raise
     @bikes = policy_scope(Bike)
     if params[:query].present?
       @bikes = Bike.search_by_location_category_and_size(params[:query])
@@ -26,17 +27,8 @@ class BikesController < ApplicationController
     @review = Review.where(bike_id: @bike.id).order("create_at DESC")
   end
 
-  def search
-    # raise
-    @bikes = Bike.all
-    if params[:search].blank?
-      redirect_to bikes_path
-    else
-      @search = params[:search].downcase
-      # @bikes = Bike.all.where('lower(location) LIKE :search', search: "%#{@search}%")
-      @bikes = Bike.near(@search, 25)
-    end
-    authorize @bikes
+  def edit
+    @bike = Bike.find(params[:id])
   end
 
   def new
@@ -62,6 +54,12 @@ class BikesController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    # @bike = Bike.find(params[:id])
+    @bike.destroy
+    redirect_to user_bikes_path
   end
 
   private

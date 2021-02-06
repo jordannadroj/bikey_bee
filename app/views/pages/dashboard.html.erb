@@ -1,5 +1,5 @@
 <div class="title-index">
-  <h2>Your Bookings</h2>
+  <h2>My Bookings</h2>
 </div>
 
 <div class="cards-container">
@@ -17,6 +17,10 @@
           <p><%= b.bike.price %>€ / day</p>
           <p>Size: <%= b.bike.size %></p>
           <p>Location: <%= b.bike.location %></p>
+        </div>
+        <div>
+        <%= link_to ('<i class="fas fa-edit"></i> Edit').html_safe, edit_booking_path(b), class: "btn-edit-delete" %>
+        <%= link_to ('<i class="fas fa-trash"></i> Cancel').html_safe, booking_path(b), method: :delete, data: { confirm: "Are you sure?" }, class: "btn-edit-delete" %>
         </div>
       </div>
     <% end %>

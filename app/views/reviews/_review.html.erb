@@ -1,8 +1,11 @@
 <div class="review">
-  <div class="review-rating"><%= review.rating %></div>
-  <p class="review-content"><%= review.content %></p>
+  <p><%= @bike.name %></p>
 
-
+  <div class="review-rating">
+    <% review.rating.times do %>
+    <p><i class="fas fa-star"></i></p>
+    <% end %>
+  </div>
   <% if user_signed_in? %>
 
     <% if review.user_id == current_user.id %>
@@ -14,5 +17,5 @@
 
       </div>
     <% end %>
-  <% end %>
+  </div>
 </div>

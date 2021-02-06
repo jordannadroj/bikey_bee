@@ -6,9 +6,11 @@ html, body, .banner {
 .banner {
   background-size: cover;
   background-position: center;
+  position: relative;
+  top: -78px;
   h2 {
     margin: 0;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    // text-shadow: 8px 1px 3px rgba(0,0,0,0.2);
     font-size: 32px;
     font-weight: light;
     font-size: 50px;
@@ -35,6 +37,6 @@ html, body, .banner {
   // align-items: center;
   // justify-content: flex-start;
     margin: 0 20%;
-    padding-top: 90px;
+    padding-top: 150px;
   }
 

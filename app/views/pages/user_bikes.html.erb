@@ -1,4 +1,6 @@
-<h1>My Bikes</h1>
+<div class="title-index">
+  <h2>My Bikes</h2>
+</div>
 
 <div class="cards-container">
   <% @bikes.each do |bike| %>
@@ -19,6 +21,14 @@
           <% end %>
         </p>
       </div>
+      <div>
+        <%= link_to ('<i class="fas fa-edit"></i> Edit').html_safe, edit_bike_path(bike), class: "btn-edit-delete" %>
+        <%= link_to ('<i class="fas fa-trash"></i> Delete').html_safe, bike_path(bike), method: :delete, data: { confirm: "Are you sure?" }, class: "btn-edit-delete" %>
+      </div>
     </div>
   <% end %>
 </div>
+
+
+
+
