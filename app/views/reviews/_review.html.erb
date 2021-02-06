@@ -12,8 +12,8 @@
 
       <div class="links btn-group">
 
-        <%= link_to "Edit", edit_review_path(review.bike, review), class: "btn btn-custom" %>
-        <%= link_to "Delete", review_path(review.bike, review), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-custom" %>
+        <%= link_to "Edit", edit_review_path(review), class: "btn btn-custom" %>
+        <%= link_to "Delete", review_path(review), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-custom" %>
 
       </div>
     <% end %>

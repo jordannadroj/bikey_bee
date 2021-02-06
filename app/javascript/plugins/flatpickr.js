@@ -4,3 +4,5 @@ import flatpickr from "flatpickr";
 window.addEventListener("turbolinks:load", function() {
   flatpickr(".datepicker", {});
 });
+
+// export { flatpickr };
