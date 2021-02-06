@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :edit, :destroy]
-  before_action :find_bike, only: [:new, :create]
+  before_action :find_bike, only: [:new, :create, :edit, :update]
 
   def index
     # raise

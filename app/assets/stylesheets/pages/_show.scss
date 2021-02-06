@@ -11,13 +11,18 @@
   width: 90%;
 }
 
+.reviews {
+  width: 66%;
+  margin-left: 17%;
+}
+
 .review {
-  display: grid;
-  grid-gap: 48px;
-  margin: 20px;
-  padding: 48px;
-  grid-template-columns: 11fr 1fr;
-  background-color: white;
+  // display: grid;
+  // grid-gap: 48px;
+  // margin: 20px;
+  // padding: 48px;
+  // grid-template-columns: 1fr;
+  // // background-color: white;
 }
 
 .review-rating {
@@ -37,4 +42,9 @@
 .review-link {
  padding-top: 16px;
  margin-top: 16px;
+}
+
+#new_review {
+  width: 66%;
+  margin-left: 17%;
 }
