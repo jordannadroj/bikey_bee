@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :set_bike
+  before_action :set_bike, except: [:edit, :update, :destroy]
   before_action :set_review, only: [:edit, :update, :destroy]
 
   def new
@@ -29,7 +29,7 @@ class ReviewsController < ApplicationController
     authorize @review
     if @review.update(review_params)
       # authorize @review
-      redirect_to bike_path(@bike)
+      redirect_to bike_path(@review.bike)
     else
       # authorize @review
       render "edit"
@@ -40,7 +40,7 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     @review.destroy
     authorize @review
-    redirect_to bike_path(@bike)
+    redirect_to bike_path(@review.bike)
   end
 
   private
