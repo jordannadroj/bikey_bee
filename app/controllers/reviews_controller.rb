@@ -15,7 +15,7 @@ class ReviewsController < ApplicationController
     authorize @review
 
     if @review.save
-      redirect_to bike_path(@bike)
+      redirect_to bike_path(@bike, anchor: "review-")
     else
       render :new
     end
