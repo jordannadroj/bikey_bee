@@ -1,5 +1,5 @@
 class BikesController < ApplicationController
-  before_action :set_bike, only: [:show, :edit, :update, :destroy]
+  before_action :set_bike, only: %i[show edit update destroy]
   def index
     # @bikes = Bike.all
     # raise
@@ -14,13 +14,13 @@ class BikesController < ApplicationController
 
   def show
     @bike = Bike.find(params[:id])
-      if @bike.latitude && @bike.longitude
-        @marker = {
-          lat: @bike.latitude,
-          lng: @bike.longitude,
-          infoWindow: render_to_string(partial: "map_box", locals: { bike: @bike })
-        }
-      end
+    if @bike.latitude && @bike.longitude
+      @marker = {
+        lat: @bike.latitude,
+        lng: @bike.longitude,
+        infoWindow: render_to_string(partial: "map_box", locals: { bike: @bike })
+      }
+    end
     # for adding booking directly on to show page
     @booking = Booking.new
     @review = Review.new

@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
-  before_action :set_bike, except: [:edit, :update, :destroy]
-  before_action :set_review, only: [:edit, :update, :destroy]
+  before_action :set_bike, except: %i[edit update destroy]
+  before_action :set_review, only: %i[edit update destroy]
 
   def new
     @review = Review.new

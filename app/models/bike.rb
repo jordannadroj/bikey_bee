@@ -18,9 +18,9 @@ class Bike < ApplicationRecord
   end
 
   include PgSearch::Model
-   pg_search_scope :search_by_location_category_and_size,
-     against: [:location, :category, :size],
-     using: {
-       tsearch: { prefix: true } # <-- now `superman batm` will return something!
-     }
+  pg_search_scope :search_by_location_category_and_size,
+                  against: %i[location category size],
+                  using: {
+                    tsearch: { prefix: true } # <-- now `superman batm` will return something!
+                  }
 end
