@@ -29,7 +29,7 @@ This web application is built on Ruby on Rails with Ruby, HTML, CSS, & Javascrip
 * PG Search
 * Bootstrap
 * AJAX in Rails
-* Websocket and Action Cable
+
 
 ## Install
 
