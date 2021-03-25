@@ -1,6 +1,6 @@
 # Bikey Bee
 
-Bikey Bee is a project built from 4 students enrolled in the Full Stack Web Development course at Le Wagon. The purpose of this project was to clone Airbnb.
+[Bikey Bee](https://airbnb-jordannadroj.herokuapp.com/)is a project built from 4 students enrolled in the Full Stack Web Development course at Le Wagon. The purpose of this project was to clone Airbnb.
 
 This web application is built on Ruby on Rails with Ruby, HTML, CSS, & Javascript
 
