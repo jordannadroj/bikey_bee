@@ -15,4 +15,12 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'pages#dashboard', as: 'dashboard'
 
   get '/user_bikes', to: 'pages#user_bikes', as: "user_bikes"
+
+  # for api
+  namespace :api, default: { format: :json } do
+    namespace :v1 do
+      resources :bikes, only: [ :index, :show, :update ]
+    end
+  end
+
 end
