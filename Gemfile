@@ -37,6 +37,9 @@ gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
 
+# for api token authentication
+gem 'simple_token_authentication'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
